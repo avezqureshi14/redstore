@@ -82,7 +82,7 @@ def home(request):
         order = {'get_cart_total':0,'get_cart_items':0}
         cartItems = order['get_cart_items']   
     context = {"cartItems":cartItems}
-    return render(request, 'home.html', context)    
+    return render(request, 'index.html', context)    
 
 
 def navbar(request):
