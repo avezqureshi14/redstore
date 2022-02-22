@@ -1,0 +1,491 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        margin: auto;
+        max-width: 120rem;
+    }
+
+
+    header {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .headermobile {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 0rem;
+    }
+
+
+    .headermobile{
+        display: none;
+    }
+
+    .logo img {
+        width: 10rem;
+    }
+
+    .logoh img {
+        width: 10rem;
+    }
+
+    ul {
+        display: flex;
+    }
+
+    ul li {
+        list-style: none;
+        margin: 1rem;
+    }
+
+
+    .cart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cart span {
+        margin-right: 0.5rem;
+    }
+
+    .cart img {
+        width: 2rem;
+    }
+
+
+
+
+
+
+
+    a{
+
+        text-decoration: none;
+    }
+
+    header a {
+        text-decoration: none;
+        color: black;
+    }
+
+    header a:hover {
+        color: orangered;
+    }
+
+    .mybtn {
+        transition: 0.2s;
+        padding: 7px;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        border: 1.5px solid black;
+        text-transform: capitalize;
+        font-size: 19px;
+
+    }
+
+    .mybtn:hover {
+        border: 1.5px solid black;
+        color: black;
+        background: #fff;
+    }
+
+    .logbtn {
+        transition: 0.2s;
+        padding: 7px;
+        border: 1.5px solid orangered;
+        border-radius: 5px;
+        color: orangered;
+    }
+
+    .logbtn:hover {
+        background-color: orangered;
+        color: white;
+        border: 1.5px solid orangered;
+    }
+    .build {
+        transition: 0.2s;
+        padding: 7px;
+        border: 1.5px solid orangered;
+        border-radius: 5px;
+        color: orangered;
+    }
+
+    .build:hover {
+        background-color: orangered;
+        color: white;
+        border: 1.5px solid orangered;
+    }
+
+    #cart-total {
+        border-radius: 50%;
+        padding: 0.4vw 0.8vw;
+        background-color: red;
+        color: #fff;
+    }
+
+    .hmsec {
+        height: 84vh;
+    }
+
+    .marginn {
+        margin: 6rem 6rem 8rem 0rem;
+    }
+
+
+
+    form {
+        width: 29vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+    }
+
+    form input {
+        padding: 5px;
+        width: 29vw;
+    }
+
+    @media(max-width:1000px) {
+
+        .logo {
+            margin-left: 2rem;
+            margin-top: -1rem;
+        }
+
+        .lgbox{
+            display:flex;
+        }
+
+
+
+       
+
+
+    }
+
+    @media(max-width:1000px) {
+        .lgbox p {
+            margin: 2rem;
+        }
+        
+
+
+        .logo {
+            margin-left: 2rem;
+            margin-top: -1rem;
+        }
+
+        .lgbox {
+            margin: 6rem 0rem 8rem 0rem;
+            text-align: center;
+            display:flex;
+            margin: 6rem 0rem 8rem 0rem;
+            text-align: center;
+            justify-content: space-evenly;
+            background: linear-gradient(157deg,#fff, #ff5722);
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 25px;
+            margin: 2rem;
+            box-shadow: 3px 1px 29px 1px #00000061;
+            
+        }
+
+        .rightBox img {
+            width: 91vw;
+            height: 87vw;
+            padding: 2rem 0rem 0rem 0rem;
+        }
+
+        .btn input {
+            padding: 0.8vw 3vw;
+            font-size: 4.5vw;
+            margin-top: 0rem;
+            margin-bottom: 3rem;
+        }
+        .lgbox{
+            display:flex;
+        }
+
+    }
+
+    @media(max-width:960px) {
+
+        .none {
+            display: none;
+        }
+
+        .logo {
+            display: none;
+        }
+
+        .mainHead {
+            display: none;
+        }
+
+        .headermobile{
+            display: flex;
+        }
+
+        header{
+            margin-top: -1rem;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0.5rem;
+        }
+
+        .testicard {
+            width: 20rem;
+        }
+
+        form {
+            width: 54vw;
+        }
+
+        #cart-total {
+            text-decoration: none;
+        }
+
+        .sec-1 {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .leftSection h1 {
+            font-size: 8vw;
+        }
+
+        .lgbox{
+            display:flex;
+
+        }
+
+        .mainHead h1 {
+            font-size: 8vw;
+        }
+
+        .leftSection p {
+            font-size: 3vw;
+        }
+
+        .leftSection input {
+            padding: 0.8vw 3vw;
+            font-size: 4.5vw;
+        }
+
+        .btn input {
+            padding: 0.8vw 3vw;
+            font-size: 4.5vw;
+        }
+
+        .rightSection img {
+            width: 79vw;
+            height: 62vw;
+            margin-top: -3rem;
+        }
+
+        .hmsec {
+            height: 130vw;
+        }
+
+        .leftSection input {
+            transform: translateY(70vw);
+        }
+        .lgbox{
+            display:flex;
+        }
+
+    }
+
+
+    @media(max-width:920px) {
+        .marginn {
+            margin: 6rem 2rem 8rem 0rem;
+        }
+        .lgbox{
+            display:flex;
+        }
+
+
+    }
+
+    @media(max-width:750px) {
+        .none750 {
+            display: none;
+        }
+
+
+
+
+        .cart img {
+            margin-right: 1rem;
+        }
+
+        form {
+            width: 54vw;
+        }
+
+        .lgbox {
+            margin: 6rem 0rem 8rem 0rem;
+            text-align: center;
+        }
+        .lgbox{
+            display:flex;
+        }
+    }
+
+    @media(max-width:790px) {
+        .lgbox {
+            margin: 6rem 0rem 8rem 0rem;
+            text-align: center;
+        }
+
+        .lgbox{
+            display:flex;
+        }
+
+        .rightBox img {
+            width: 91vw;
+            height: 87vw;
+            padding: 2rem 0rem 0rem 0rem;
+        }
+
+        .btn input {
+            padding: 0.8vw 3vw;
+            font-size: 4.5vw;
+            margin-top: 0rem;
+            margin-bottom: 3rem;
+        }
+
+    }
+
+    @media(max-width:660px) {
+  
+        form {
+            width: 80vw;
+        }
+    }
+
+    @media(max-width:540px) {
+        .marginn {
+            margin: 6rem 0rem 8rem 0rem;
+        }
+    }
+    b{
+        display: block;
+        margin-left: -7px;
+    }
+</style>
+
+<body>
+    <div class="headermobile">
+        <a href="{% url 'home' %}">
+            <div class="logoh">
+                <img src="{%static 'images/logo.png'%}" alt="logo.png">
+            </div>
+        </a>
+        <div class="navbar">
+            <ul style=" display: flex;justify-content: center;align-items: center;">
+                <li style="margin-top: 27px;">
+                    {% if request.user.is_authenticated %}
+                    <a class="logbtn" href="{% url 'logout' %}" style="text-decoration: none;">Logout</a>
+                    {% else %}
+                    <a class="logbtn" href="{% url 'login' %}"><i class="fa fa-user" style="font-size:24px; padding-bottom: 15px;"></i></a>
+                    <b>Login</b>
+                    {% endif %}
+                </li>
+                <li style="margin-top: 48px;">
+                    <a href="{% url 'allproducts' %}"><i class='build fa fa-building' style='font-size:24px; padding-bottom: 5px; margin-left: -1px;'></i></a>
+                    <b>Shop</b>
+                    
+                </li>
+            </ul>
+        </div>
+        <a href="{% url 'cart' %} " style="text-decoration: none;" style="margin-top: 3rem;" >
+            <div class="cart" style="margin-top:-1rem;">
+                <img src="{%static 'images/cart.png'%}" alt="">
+                <p id="cart-total" style="margin-left: -15px;">0</p>
+            </div>
+        </a>
+    </div>
+    </div>
+    <header>
+        <a href="{% url 'home' %}">
+            <div class="logo">
+                <img src="{%static 'images/logo.png'%}" alt="logo.png">
+            </div>
+        </a>
+        <div class="navbar">
+            <ul style=" display: flex;justify-content: center;align-items: center;">
+                <li>
+                  
+                    <form class="form-inline my-2 my-lg-0" action="{% url 'allproducts' %}" method="GET" >
+                        <input style="height: 3rem;" class="form-control mr-sm-2" type="search" placeholder="Search" name="q" aria-label="Search">
+                        <button class="btn btn-outline my-sm-0" style="border: 2px solid #ced4da; height: 3rem;" type="submit"><i type="submit" class="fa fa-search" style="cursor:pointer;  font-size:24px"></i></button>
+                      </form>
+
+                </li>
+                <li class="none">
+                    {% if request.user.is_authenticated %}
+                    <a class="logbtn" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="logbtn" href="{% url 'login' %}">Login</a>
+                    <a class="logbtn" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="none "><a class="mybtn" href="{% url 'user' %}"> Hello! {{user}} </a></li>
+                {% endif %}
+                <li style="margin-top: 31px;">
+                    <a href="{% url 'allproducts' %}"><i class='build none fa fa-building' style='font-size:24px; padding-bottom: 5px; margin-left: -7.5px;'></i></a>
+                    <b class="none" >Shop</b>
+                    
+                </li>
+            </ul>
+        </div>
+        <a href="{% url 'cart' %}">
+            <div class="cart none" style="margin-top:-2rem;">
+                <span class="none750">MyCart</span>
+                <img src="{%static 'images/cart.png'%}" alt="">
+                <p id="cart-total">{{cartItems}}</p>
+            </div>
+        </a>
+
+    </header>
+
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<style>
+    .box-element {
+        box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .cart-row {
+        display: flex;
+        align-items: flex-stretch;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ece;
+    }
+
+    .row-image {
+        width: 100px;
+    }
+
+    .quantity {
+        display: inline-block;
+        font-weight: 700;
+        padding-right: 10px;
+    }
+
+    .chg-quantity {
+        width: 12px;
+        cursor: pointer;
+        display: block;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+<div class="container my-5 ">
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="box-element">
+                <a href="{% url 'allproducts' %}" class="btn btn-outline-dark">&#x2190; Continue Shopping</a>
+            </div>
+            <br>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h5>Item:</h5><strong>{{order.get_cart_items}}</strong>
+                    </th>
+                    <th>
+                        <h5>Total:</h5><strong>${{order.get_cart_total|floatformat:2}}</strong>
+                    </th>
+                    <th>
+                        <a style="float: right;margin: 5px;" href="{% url 'checkout' %}"
+                            class="btn btn-outline-success">Checkout</a>
+                    </th>
+                </tr>
+            </table>
+            <br>
+            <div class="box-element">
+                <div class="cart-row">
+                    <div style="flex:2"></div>
+                    <div style="flex:2"><strong>Item</strong> </div>
+                    <div style="flex:1"><strong>Price</strong> </div>
+                    <div style="flex:1"><strong>Quantity</strong> </div>
+                    <div style="flex:1"> <strong>Total</strong> </div>
+                </div>
+                {% for item in items %}
+                <div class="cart-row">
+                    
+                    <div style="flex:2"> <img class="row-image" src="{{item.product.image1.url}}" alt=""> </div>
+                    <div style="flex:2">
+                        <p>{{item.product.name}}</p>
+                    </div>
+                    <div style="flex:1">
+                        <p>${{item.product.price|floatformat:2}}</p>
+                    </div>
+                    <div style="flex:1">
+                        <p class="quantity">{{item.quantity}}</p>
+                        <div class="quantity">
+                            <img data-product={{item.product.id}} data-action="add" src="{%static 'images/arrUp.png'%}" alt="" class="chg-quantity update-cart">
+                            <img data-product={{item.product.id}}  src="{%static 'images/arrdwn.png'%}" alt="" data-action="remove" class="chg-quantity update-cart">
+                        </div>
+                    </div>
+                    <div style="flex:1">${{item.get_total}}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

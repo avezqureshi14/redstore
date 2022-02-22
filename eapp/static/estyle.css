@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    max-width: 120rem;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.logo img{
+    width: 10rem;
+}
+
+ul{
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    margin: 1rem;
+}
+
+
+.cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart span{
+    margin-right: 0.5rem;
+}
+
+.cart img{
+    width: 2rem;
+}
+
+
+@media(max-width:860px){
+    .none{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+.sec-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6rem;
+    margin-left: 8vw;
+    align-items: center;
+    
+}
+
+.leftSection h1{
+    font-size: 3.5vw;
+    font-weight: 1000;
+}
+
+.leftSection p{
+    margin-bottom:2rem ;
+}
+
+.leftSection input{
+    padding: 0.7vw 3vw;
+    background-color: #ff5722;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+
+.rightSection img{
+    width: 40vw;
+    height: 33vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sec-3{
+    background-color: #fff;
+    height: 100vh;
+    margin-bottom: -9rem;
+
+}
+
+
+
+.sec-2{
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+}
+
+.mainContent{
+    height:100%;
+    margin-top: 2rem;
+    margin: auto;
+    max-width: 120rem;
+
+}
+
+.mainHead h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+a{
+    text-decoration: none;
+}
+
+.mainHead span{
+    display: flex;
+    display: flex;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+
+.line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5722;
+    color: #ff5722;
+    width: 117px;
+    height: 4px;
+}
+
+
+.popularCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-content{
+    box-shadow: 3px 1px 29px 1px #00000061;
+}
+
+.card{
+    width: 17rem;
+    height: 21rem;
+    margin-top: 4rem;
+}
+
+.margin{
+    margin: 5rem;
+}
+.image{
+    width: 17rem;
+    height: 21rem;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+.textContent{ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    line-height: 2rem;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.lefttextContent{
+    margin-left: 0;
+}
+
+.lefttextContent{
+    margin-bottom: 8px;
+}
+
+.righttextContent{
+    margin-right: 0;
+}
+
+.righttextContent input{
+    background: #ff5722;
+    border: none;
+    outline: none;
+    padding: 6px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.name{
+    margin-left: -6px;
+    padding: 6px;
+}
+
+
+
+
+
+.longbox {
+    margin: auto;
+    max-width: 120rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    line-height: 3rem;
+    margin-top: 8rem;
+}
+.lgbox {
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(157deg,#fff, #ff5722);
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 25px;
+    margin: 2rem;
+    box-shadow: 3px 1px 29px 1px #00000061;
+
+}
+.leftlg {
+    padding-top: 2rem;
+}
+.lgbox h1 {
+    font-size: 2.5rem;
+    color: #000;
+}
+.lgbox p{
+    font-size:1rem;
+    font-weight: 1000;
+    color: #000;
+}
+
+.btn input{
+    padding: 0.7vw 3vw;
+    background-color: #ff5722;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+
+.rightBox img{
+    width: 33vw;
+    height: 27vw;
+    padding: 2rem;
+    
+}
+
+.testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.testicard{
+    width: 24rem;
+    text-align: center;
+    box-shadow: 3px 1px 29px 1px #00000061;
+    margin: 2rem;
+    padding: 4rem;
+    border-radius: 15px;
+
+}
+
+
+.testiimage{
+    width:6rem;
+    height: 6rem;
+}
+
+.testiimage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.testicard h3{
+    width: 13rem;
+    margin-top: 1rem;
+}
+
+
+.testiline{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.margtestitop{
+    margin-bottom: 2rem;
+}
+
+
+
+
+.brands ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+.brands li{
+    filter: grayscale();
+    cursor: pointer;
+}
+.brands li:hover{
+    filter: none;
+}
+
+
+
+.allsec{
+    margin: auto;
+    max-width: 120rem;
+}
+
+.AllpopularCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Allcard-content {
+    box-shadow: 3px 1px 29px 1px #00000061;
+}
+
+.Allcard {
+    width: 17rem;
+    height: 21rem;
+    margin-top: 4rem;
+}
+
+
+.Allimage {
+    width: 21rem;
+    height: 21rem;
+}
+
+.Allimage img {
+    width: 100%;
+    height: 100%;
+}
+
+.AlltextContent {
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.AlllefttextContent {
+    margin-left: 0;
+}
+
+.AlllefttextContent {
+    margin-bottom: 8px;
+}
+
+.AllrighttextContent {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;
+}
+
+.AllrighttextContent input {
+  
+    background: #ff5722;
+    border: none;
+    outline: none;
+    padding: 6px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 8px;
+    margin-left: 0;
+}
+
+.AllrighttextContent h3{
+    margin:0 ;
+}
+
+.Allname {
+    margin-left: -6px;
+    padding: 6px;
+}
+
+.Allcard {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.AllCards{
+margin-bottom: 5rem;
+}
+
+.Addcard{
+    box-shadow: 3px 1px 29px 1px #00000061;
+
+}
+
+.Addcard a{
+    text-decoration: none;
+}
+
+.Allcard i{
+    font-size: 12rem;
+    display: flex;
+    color: #00000082;
+}
+
+.minus{
+    margin-left: -7px;
+}
+
+.minus i{
+    font-size: 17px;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-minus:before{
+    padding: 3px;
+    background: red;
+    border-radius: 50%;
+}
+
+.update {
+    padding: 6px;
+}
+
+.update a{
+    color: red;
+    font-weight: 1000;
+   font-family: sans-serif;
+   text-decoration: none;
+   letter-spacing: 1px;
+}
+

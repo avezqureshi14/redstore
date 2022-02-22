@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var user = "{{request.user}}"
+    function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getToken('csrftoken');
+</script>
+<style>
+    html {
+        user-select: none;
+    }
+
+    .footcontainer {
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .footerrow {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footer-col {
+        display: flex;
+        justify-content: center;
+        flex-basis: 50%;
+        min-width: 300px;
+        align-items: center;
+        text-align: start;
+    }
+
+    .footer-col-1 {
+        margin: 1rem;
+    }
+
+    .footer-col-2 {
+        margin: 1rem;
+    }
+
+    .footer-col-3 {
+        margin: 1rem;
+    }
+
+    .footer-col-4 {
+        margin: 1rem;
+    }
+
+
+
+    .bigfooter {
+        background-color: #000;
+        color: #ffff;
+        font-size: 14px;
+        padding: 60px 0 20px;
+
+
+    }
+
+    .bigfooter p {
+        color: #ffff;
+        width: 289px;
+    }
+
+    .bigfooter h3 {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .bigfooter-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        min-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .bigfooter-col-1 {
+        flex-basis: 30%;
+    }
+
+    .bigfooter-col-2 {
+        flex: 1;
+        text-align: center;
+    }
+
+
+
+    .bigfooter-col-3,
+    .footer-col-4 {
+        flex-basis: 12%;
+        text-align: center;
+
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .footer-col-2 ul {
+        display: block;
+        text-align: start;
+        padding-left: 0;
+    }
+
+    .footer-col-3 ul {
+        display: block;
+        text-align: start;
+        padding-left: 0;
+    }
+
+    .footer-col-4 ul {
+        display: block;
+        text-align: start;
+        padding-left: 0;
+
+    }
+
+    .footer-col-3 ul li {
+        margin: 0;
+    }
+
+    .footer-col-4 ul li {
+        margin: 0;
+    }
+
+    .bigfooter hr {
+        border: none;
+        background-color: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .foothead h3 {
+        text-align: start;
+    }
+
+    .fline {
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+        background-color: #ff5722;
+        color: transparent;
+        width: 57px;
+        margin-left: 0rem;
+        text-align: start;
+        height: 3px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'estyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Ecommerce</title>
+    {% block style %}
+    <style>
+
+    </style>
+    {% endblock style %}
+    <script>
+        var user = '{{request.user}}'
+        function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+    </script>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    {% include 'bootstrap.html' %}
+    {% load static %}
+    {% block content %}
+    {% endblock content %}
+
+
+
+     
+    <script type="text/javascript" src="{% static 'cart.js' %}"></script>
+</body>
+
+</html>

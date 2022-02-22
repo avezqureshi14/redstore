@@ -1,0 +1,277 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .lgbox{
+        display: grid;
+    justify-content: space-evenly;
+    background: linear-gradient(157deg,#fff, #ff5722);
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 25px;
+    margin: 2rem;
+    box-shadow: 3px 1px 29px 1px #00000061;
+    grid-template-columns: 1fr 1fr;
+    }
+    .name{
+        padding: 0;
+        margin-left: 0;
+        margin-bottom: -10px;
+    }
+   .ptag{
+        color: green;
+        display: inline;
+    }
+    hr{
+        margin-bottom: 2px;
+    }
+    strong{
+        margin-left: 7px;
+    }
+    .ytextContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffcdbd;
+    line-height: 2rem;
+    padding: 0rem 1rem 0rem 1rem;
+    padding-top: 9px;
+
+    
+}
+
+
+@media(max-width:1000px){
+    .lgbox{
+            display:flex;
+        }
+}
+</style>
+<section class="hmsec" style="background: linear-gradient(360deg,#ff50396e, #fff); ">
+    <div class="sec-1">
+        <div class="leftSection">
+            <h1>Giving Your Workout <br> A New Style</h1>
+            <p>Success isn't changes about greatness,it's about consistency. Consitent hardwork gains
+                success. Greatness will come</p>
+          <a href="{% url 'allproducts' %}"><input type="submit" value="Explore Now" name="" id=""></a>  
+        </div>
+        <div class="rightSection">
+            <img src="{%static 'images/image1.png'%}" alt="">
+            
+        </div>
+    </div>
+</section>
+<section>
+    <div class="sec-2">
+
+        <div class="mainContent"> 
+            <div class="mainHead">
+                <h1>Latest Products</h1>
+                <span class="line">-</span>
+            </div>
+
+            <div class="popularCards">
+               
+                <div class="card marginn">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{%static 'images/category-1.jpg'%}" alt="">
+                        </div>
+                        <div class="ytextContent">
+                            <div class="lefttextContent">
+                                <div class="name">
+                                   <a href="{% url 'allproducts' %}?q=Blazers"><h3>Blazers</h3></a> 
+                                </div>
+                                <hr>
+                                <strong> <p class="ptag">384  Sold</p> in last 8 hours</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card marginn">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{%static 'images/category-1.jpg'%}" alt="">
+                        </div>
+                        <div class="ytextContent">
+                            <div class="lefttextContent">
+                                <div class="name">
+                                    <a href="{% url 'allproducts' %}?q=Shirts"><h3>Shirts</h3></a> 
+                                </div>
+                                <hr>
+                                <strong><p class="ptag">1384 Sold</p> in last 8 hours</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card marginn">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="{%static 'images/category-1.jpg'%}" alt="">
+                        </div>
+                        <div class="ytextContent">
+                            <div class="lefttextContent">
+                                <div class="name">
+                                    <a href="{% url 'allproducts' %}?q=Shoes"><h3>Shoes</h3></a> 
+                                </div>
+                                <hr>
+                                <strong><p class="ptag">2384 Sold</p> in last 8 hours</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            
+            </div>
+
+        </div>
+</section>
+
+<section style="margin: 2rem;">
+    <div class="longbox">
+        <div class="lgbox">
+
+
+            <div class="rightBox">
+                <img src="{%static 'images/exclusive.png'%}" alt="">
+
+            </div>
+
+            <div class="leftlg">
+
+                <h1>Smart Band 4</h1>
+                <p>Success isn't changes about greatness,it's about consistency. Consitent hardwork gains
+                    success. Greatness will come</p>
+                <br>
+                <div class="btn">
+                    <a href="{% url 'allproducts' %}?q=Watches"><input type="submit" value="Checkout Now" name="" id=""></a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+<section class="sec-3">
+    <div class="sec-2">
+
+        <div class="mainContent ">
+            <div class="mainHead margtestitop">
+                <h1>What Solapuri People Say About Us</h1>
+                <span class="line">-</span>
+            </div>
+
+            <div class="popularCards">
+                 <div class="testimonials">
+                     <div class="testicard">
+                            <div class="testiimage">
+                                <img src="{%static 'images/user-1.png'%}" alt="">
+                            </div>
+                            <h3>Aurat</h3>
+                            <span class="line testiline">-</span>
+
+
+                            <div class="testicontent">
+                                <p>Success isn't changes about greatness,it's about consistency. <br> Consitent hardwork gains success. Greatness will come
+                                </p>
+                            </div>
+                     </div>
+                     <div class="testicard margintesti">
+                            <div class="testiimage">
+                                <img src="{%static 'images/user-1.png'%}" alt="">
+                            </div>
+                            <h3>Aurat</h3>
+                            <span class="line testiline">-</span>
+
+
+                            <div class="testicontent">
+                                <p>Success isn't changes about greatness,it's about consistency. <br> Consitent hardwork gains success. Greatness will come
+                                </p>
+                            </div>
+                     </div>
+                     <div class="testicard">
+                            <div class="testiimage">
+                                <img src="{%static 'images/user-1.png'%}" alt="">
+                            </div>
+                            <h3>Aurat</h3>
+                            <span class="line testiline">-</span>
+
+
+                            <div class="testicontent">
+                                <p>Success isn't changes about greatness,it's about consistency. <br> Consitent hardwork gains success. Greatness will come
+                                </p>
+                            </div>
+                     </div>
+                 </div>
+            </div>
+
+        </div>
+</section>
+<section >
+
+    <div class="brands">
+        <ul>
+            <li><img src="images/logo-coca-cola.png" alt=""></li>
+            <li><img src="images/logo-godrej.png" alt=""></li>
+            <li><img src="images/logo-oppo.png" alt=""></li>
+            <li><img src="images/logo-paypal.png" alt=""></li>
+            <li><img src="images/logo-philips.png" alt=""></li>
+        </ul>
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="bigfooter">
+        <div class="footcontainer">
+            <div class="footrow">
+                <div class="footer-col">
+                    <div class="foothead footer-col-l">
+                        <h3>About us</h3>
+                        <span class="fline">-</span>
+
+                        <p>Our Peupose is to to Sustainly Make the Pleasure Sustainly Make the Pleasure and Benefits
+                            of Sports Accessible to many </p>
+                    </div>
+                    <div class="foothead footer-col-2">
+
+                        <h3>Address</h3>
+                        <span class="fline">-</span>
+
+                        <p>822, Bijapur Base, Shukruwar Peth, Solapur, 413005</p>
+                        <p> <i class="fa fa-phone"></i> &nbsp; 9890562214</p>
+                    </div>
+                    <div class="foothead footer-col-3">
+                        <h3>Useful Links</h3>
+                        <span class="fline">-</span>
+
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="foothead footer-col-4">
+                        <h3>Follow us</h3>
+                        <span class="fline">-</span>
+
+                        <ul>
+                            <li> <i class="fa fa-facebook"></i> &nbsp; Facebook</li>
+                            <li> <i class="fa fa-twitter"></i> &nbsp; Twitter</li>
+                            <li> <i class="fa fa-instagram"></i> &nbsp; Instagram</li>
+                            <li> <i class="fa fa-youtube"></i> &nbsp; Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyright">Copyright 2022 - Avez Qureshi</p>
+            </div>
+        </div>
+    </div>
+</footer> 
+{% endblock content %}

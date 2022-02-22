@@ -1,0 +1,275 @@
+
+@media(max-width:1340px){
+    button{
+        height: 5vw;
+    }
+    .homeContent{
+        margin-top: 2rem;
+    }
+
+}
+@media(max-width:1096px){
+    button{
+        width: 75vw;
+        height: 6vw;
+    }
+    .homeContent{
+        margin-top: 4rem;
+    }
+}
+
+@media(max-width:1200px){
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem;
+    }
+    .lgbox h1{
+        text-align: center;
+    }
+    .lgbox h2{
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media(max-width:1000px){
+    button{
+        width: 90vw;
+        height: 8vw;
+    }
+
+
+    .homeContent{
+        margin-top: 5rem;
+    }
+    .headContent h1{
+        font-size: 5vw;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    
+    .headContent p{
+        font-size: 4vw;
+        color: #fff;
+    }
+
+    .btn{
+        margin-top: 3rem;
+    }
+ 
+
+   
+}
+
+@media(max-width:820px){
+    nav{
+        justify-content: space-around;
+    }
+    nav ul{
+        display: none;
+    }
+    .portfolio{
+        display: none;
+    }
+    .ham li a{
+        display: inline-block;
+    }
+    .mainMenu {
+        margin: auto;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;    
+        margin-left: -2rem;
+        left: 0;
+        line-height: 5rem;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        background-image: linear-gradient(
+            310deg,#7928ca,#ff0080);
+        transition: top 1s ease;
+        display: none;
+    }
+    
+
+
+    .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 3.5rem;
+    }
+    .openMenu {
+        display: block;
+        margin-top: 2px;
+    }
+   
+    .mainMenu li a{
+        padding: 10px 30px;
+        border: none;
+        border-radius: 15px;
+        background-color: hsla(0,0%,100%,.8)!important;
+        box-shadow: 20px 20px 50px rgb(0,0,0,0.5);
+        color: #ff0080;
+    }
+    .mainMenu li a:hover {
+        background-color: hsla(0,0%,100%)!important;
+        background: none;
+        color: #7928ca;
+    }
+
+}
+
+@media(max-width:774px){
+    
+
+    button{
+        width: 90vw;
+        height: 12vw;
+    }
+
+   
+    .btn1{
+        font-weight: 800;
+        margin-left: 0rem;
+        margin-top: 3rem;
+    }
+}
+
+@media(max-width:605px){
+    .homeContent {
+        margin-top: 1rem;
+    }
+    .headContent {
+        width: 20rem;
+        margin: auto;
+    }
+    .headContent h1 {
+        font-size:3rem;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    .headContent p {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    .logo{
+        font-size: 20px;
+        margin-top: 4px;
+    }
+    button{
+        width: 75vw;
+        height: 20vw;
+    }
+
+}
+
+
+@media(max-width:505px){
+    .sliderCard{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+
+@media(max-width:420px){
+    .homeContent {
+        margin-top: 2rem;
+    }
+    .headContent h1 {
+        font-size: 2.5rem;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    .headContent p {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .sliderCard{
+        margin-left: 1rem;
+        margin-right: 1rem;    
+        width: 17rem;
+        height: 23rem;
+    }
+    .sliderCardSection{
+        margin: 1.5rem;
+    }
+
+   
+}
+
+
+@media(max-width:380px){
+    .headContent {
+        width: 15rem;
+        margin: auto;
+    }
+    .homeContent {
+        margin-top: 2rem;
+    }
+    .headContent h1 {
+        font-size: 2rem;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    .headContent p {
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+ .btn a{
+     padding-left: 0.5rem ;
+     padding-right: 0.5rem ;
+ }
+ .icontainer .icard{
+     margin-left: 1rem;
+     margin-right: 1rem;
+ }
+ .longbox{
+     margin: -1rem;
+     margin-top: 4rem;
+ }
+ .counterDescription{
+     width: 12rem;
+ }
+ .mainHead h1{
+     font-size: 2rem;
+     margin-top: 3rem;
+ }
+ .mainHead h3{
+     font-size: 1rem;
+ }
+ .project{
+     margin: 1rem;
+ }
+ .icontainer .icard{
+     width: 219px;
+ }
+
+
+}
+
+@media(max-width:340px){
+    .sliderCard{
+        margin-left: 1rem;
+        margin-right: 1rem;    
+        width: 14rem;
+        height: 20rem;
+    }
+    .sliderCardSection{
+        margin: 1.2rem;
+    }
+}
+

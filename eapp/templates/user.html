@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+
+<style>
+.pic{
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+    border-radius: 50%; 
+}
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card-body card">
+            <a class="btn-warning btn" href="{% url 'home' %}" > &#8592; Back to Profile</a>
+            <hr>
+            <h3 style="text-align: center;" >Account Settings</h3>
+            <hr>
+            <img class="pic" src="profile-pic" alt="" srcset="">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-9">
+    <div class="card-body card">
+        <form action="" method="POST">
+            <input type="submit" class="btn btn-primary" value="Update Information" >
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

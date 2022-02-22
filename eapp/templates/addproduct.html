@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+
+    .containerBox {
+        transform: translateY(5vw);
+        box-shadow: 3px 1px 29px 1px #00000061;
+        border-radius: 25px;
+        text-align: start;
+        margin: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    form{
+        margin-top: 2rem;
+    }
+  
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: -11px;
+		}
+
+		#form-title{
+			color: #000;
+            font-size: 2rem;
+		}
+		.login_btn {
+			width: 100%;
+			background: #33ccff !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #f7ba5b !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		select{
+			width: 100%;
+            height: 2.2rem;
+		}
+
+</style>
+
+<body>
+    <div class="containerBox">
+    
+        
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<a href="{% url 'createcategory' %}" class="btn btn-warning btn-block" >Create New Category</a>
+			     <br>
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">Product</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+                        {% csrf_token %}
+					
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+							</div>
+							<input type="text" Required name="name" class="form-control" >
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+							</div>
+                            <input type="number" Required name="price" class="form-control" >
+						</div>
+						
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+							</div>
+                            <input type="text" Required name="description" class="form-control" >
+
+						</div>
+						
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+							</div>
+							<input type="text" Required name="deleiverydays" class="form-control" >
+						</div>
+						
+						<div class="mb-3">
+							{% if prod.image %}
+								<img src="{{ prod.image.url }}" alt="image here" class="prod-size">
+							{% endif %}
+							<label for="" class="form-label">Image</label>
+							<input type="file" name="image" class="form-control">
+						</div>
+
+
+
+						
+					
+						
+                            <input type="submit" class="btn btn-primary" value="Done" name="" id="">
+					</form>
+				</div>
+		
+				
+			</div>
+		</div>
+	</div>
+	</div>
+    <script>
+        /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+//We start indexing at one because CSRF_token is considered and input field 
+*/
+
+//Query All input fields
+var form_fields = document.getElementsByTagName('input')
+form_fields[1].placeholder='Product name..';
+form_fields[2].placeholder='Product Price..';
+form_fields[3].placeholder='Product Description..';
+form_fields[4].placeholder='Delievery Days...';
+
+
+for (var field in form_fields){	
+form_fields[field].className += ' form-control'
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .image{
+        width: 21rem;
+        height: 27rem;
+   
+    }
+    .image img{
+        width: 100%;
+        height: 100%;
+    }
+    .owl-dots{
+      display: none;
+    }
+</style>
+
+  
+    <div class="mainHead">
+      <h1>Cool Stuff's</h1>
+      <h3>products you may really like</h3>
+    </div>
+  
+    <div class="sliderCardSection">
+  
+      <div class="carousel owl-carousel">
+  
+  
+        {% for product in products  %}
+        <div class="sliderCard">
+          <a href="{% url 'productpage' product.id %}">
+          <div class="image">
+            <img src=" /media/{{product.image1}} " alt="">
+          </div>
+        </a>
+          <div class="bg">
+            <div class="caption">
+              <h1>{{product.name}} </h1>
+              <a href="{% url 'productpage' product.id %}"><i class="fa fa-binoculars" style="font-size:48px;    color: #fff;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+      
+      </div>
+    </div>
+  
+  
+  
+ 
+  
+  
+  
+  
+
+{% endblock content %}
+

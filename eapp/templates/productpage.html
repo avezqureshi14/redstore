@@ -1,0 +1,310 @@
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'estyle.css' %}">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>
+        var user = '{{request.user}}'
+        function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+    </script>
+</head>
+
+<style>
+    .smallContainer {
+        margin: 3rem;
+    }
+
+    .smallc2 {
+        margin: 4vw;
+        max-width: 120rem;
+    }
+
+    .smallContainer .row {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .singleProduct {
+        margin-top: 2vw;
+    }
+
+    .singleProduct .col-2 img {
+
+        padding: 0;
+
+    }
+
+    .singleProduct .col-2 {
+        padding: 20px;
+    }
+
+    .singleProduct .col-2 h2 {
+        font-size: 22px;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+
+    .singleProduct select {
+        padding: 8px 20px;
+        margin-top: 20px;
+    }
+
+    .colhead {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 4px 16px;
+        letter-spacing: 0.3px;
+        margin-right: 15px
+    }
+
+    .desc h3 {
+        margin-top: 20px;
+    }
+
+    table {
+        margin: 0;
+        padding: 0;
+    }
+
+    th {
+        text-align: end;
+    }
+
+    td {
+        text-align: start;
+    }
+
+    .small-img-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .small-img-col {
+        flex-basis: 24%;
+        cursor: pointer;
+    }
+
+    input:hover {
+        background-color: black;
+    }
+
+
+</style>
+
+<body>
+    <div class="smallContainer singleProduct">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{product.image1.url}}" alt="" id="ProductImg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="{{product.image1.url}}" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image2.url}}" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image3.url}}" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{product.image4.url}}" width="100%" alt="" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2" style="margin-left: 2rem;margin-top: 0vw;">
+                <div class="colhead">
+                    <BUTTON>SHARE</BUTTON><BUTTON>SHARE</BUTTON><BUTTON>SHARE</BUTTON>
+                </div>
+                <h1>{{ product.name }}</h1>
+                <h3><span>Brand</span> : <span>{{ product.brand }}</span></h3>
+                <h2>${{ product.price }}</h2>
+                <h3>Available Offers</h3>
+                <p>Sorry, No offers are Available Currently !</p>
+
+                <p style="color: green; margin-top: 10px;">Usually Delievery in {{product.delivery_days}} days</p>
+                <div class="sizes">
+                    <select name="" id="">
+                        <option value="">Select Size</option>
+                        <option value="">S</option>
+                        <option value="">M</option>
+                        <option value="">L</option>
+                        <option value="">Medium</option>
+                        <option value="">Small</option>
+                    </select>
+                </div>
+
+                <div class="desc">
+                    <h3>Product Description</h3>
+                    <p>
+                        {{product.description}}
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <div style="margin-top: 2rem;">
+                        <input type="submit" value="Add to Cart"
+                            style=" cursor: pointer; font-size: 2rem; padding: 5px 32px; background-color: orangered;color: #ffff; border: none; border-radius: 0px;"
+                            data-product="{{product.id}}" data-action="add" class="update-cart">
+                    </div>
+                    <div  style="margin-top: 2rem;">
+                        <input type="submit" value="Buy Now"
+                            style=" cursor: pointer; font-size: 2rem; padding: 5px 56px; background-color: #005405 ;color: #ffff; border: none; border-radius: 0px;"
+                            data-product="{{product.id}}" data-action="add" class="update-cart buy" onclick="buyfunc()">
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="smallc2">
+        <div class="productdetails">
+            <h1>Product Details</h1>
+
+            <br>
+
+            <h2>Alan Jones Clothing Double Collar Men's Round Neck T-Shirt</h2>
+            <li>Care Instructions: Machine Wash</li>
+            <li>Fit Type: Regular Fit</li>
+            <li>Fabric: Bio Wash Cotton Fabric</li>
+            <li>Fit: Regular Fit</li>
+            <li>Neck: Double Collar Round Neck</li>
+            <li>Sleeve: Half Sleeves</li>
+            <li>Wash Care: Machine Wash</li>
+            <li>The feel of this Alan Jones Clothing tee is absolutely amazing thanks to the use of cotton When you're
+                going for a stroll in the park put this piece with a pair of chinos and sneakers to feel both
+                comfortable and stylish outside.</li>
+            <li>Fit Type: Regular Fit</li>
+            <li>Fabric: Bio Wash Cotton Fabric</li>
+            <li>Fit: Regular Fit</li>
+            <li>Neck: Double Collar Round Neck</li>
+            <li>Sleeve: Half Sleeves</li>
+            <li>Wash Care: Machine Wash</li>
+            <li>The feel of this Alan Jones Clothing tee is absolutely amazing thanks to the use of cotton When you're
+                going for a stroll in the park put this piece with a pair of chinos and sneakers to feel both
+                comfortable and stylish outside.</li>
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="smallc2">
+        <div class="productdetails">
+
+            <div class="feapro">
+                <h1>Featured Products</h1>
+                <div class="sec-20">
+                    <div class="mainContent">
+                    
+                        <div class="popularCards">
+                            {% for product in products %}
+                            <div class="AllCards" style="margin-bottom: 10rem;">
+                                <div class="Allcard " style=" margin-left: 1.5rem;">
+                                    <div class="Allcard-content">
+                                    
+                                        <div class="Allimage">
+                                            <!-- <img src="/media/{{product.image}}" alt=""> if images are displayed through admin panel -->
+                                            <!-- <input type="files" Required name="image" id=""> -->
+                                          {% if product.image1 %}
+                                            <img src="{{product.image1.url}}" alt="">
+                                            {% else %}
+                                            <img src="{% static 'images/default.PNG' %}" alt="">
+        
+                                          {% endif %} 
+        
+                                        </div>
+                                        <div class="AlltextContent">
+                                            <div class="AlllefttextContent">
+                                                <div class="Allname">
+                                                    <h3>  <a href="{% url 'productpage' product.id %}" style="font-size: 25px;" >{{product.name}}</a> </h3>
+                                                </div>
+        
+                                            </div>
+                                            <div class="AllrighttextContent">
+                                                <input type="submit" value="Add to Cart" style="font-size: 16px;" data-product="{{product.id}}" data-action="add" class="update-cart">
+                                                <h3 > <span>{{product.price}}<span> <span>₹</span> </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+        
+                    </div>
+        
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var smallImg = document.getElementsByClassName("small-img");
+
+        smallImg[0].onclick = function () {
+            ProductImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function () {
+            ProductImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function () {
+            ProductImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function () {
+            ProductImg.src = smallImg[3].src;
+        }
+
+
+        function buyfunc() {
+            alert("Tap on the Cart Logo at the Top and Complete your Order")
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'cart.js' %}"></script>
+
+</body>
+
+</html>

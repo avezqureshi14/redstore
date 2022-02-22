@@ -1,0 +1,123 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    a{
+        text-decoration: none;
+        color: rgb(77, 75, 75);
+        transition: 0.3s;
+    }
+    a:hover{
+        color: black;
+    }
+    .ud{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .mainHead{
+        margin-top: 0vw;
+        margin-left: 3vw;
+    }
+    .sort{
+        font-size:1.5rem;
+    }
+    .sec-20{
+        margin-top:0;
+    }
+
+    .update{
+        margin: 0;
+    }
+
+    .Allimage {
+        width: 21rem;
+        height: 21rem;
+    }
+    .AllCards{
+        margin-left:4rem;
+    }
+ 
+</style>
+
+<section class="sec-3 allsec ">
+    <div class="grid">
+        <div class="mainHead " >
+            <h2 style="font-size: 1.5rem;" >Sort Products</h2>
+            <hr>
+             
+            <div class="sort"  >
+                <a href="{% url 'allproducts' %}">All</a>
+            </div>
+
+            {% for topic in topics %}
+            <div class="sort" >
+                <a href="{% url 'allproducts' %}?q={{topic.name}}">{{topic.name}}</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="sec-20">
+            <div class="mainContent">
+            
+                <div class="popularCards">
+                    {% for product in products %}
+                    <div class="AllCards" style="margin-bottom: 10rem;">
+                        <div class="Allcard " style=" margin-left: 1.5rem;">
+                            <div class="Allcard-content">
+                            
+                                <div class="Allimage">
+                                    <!-- <img src="/media/{{product.image}}" alt=""> if images are displayed through admin panel -->
+                                    <!-- <input type="files" Required name="image" id=""> -->
+                                  {% if product.image1 %}
+                                    <img src="{{product.image1.url}}" alt="">
+                                    {% else %}
+                                    <img src="{% static 'images/default.PNG' %}" alt="">
+
+                                  {% endif %} 
+
+                                </div>
+                                <div class="AlltextContent">
+                                    <div class="AlllefttextContent">
+                                        <div class="Allname">
+                                            <h3>  <a href="{% url 'productpage' product.id %}" style="font-size: 25px;" >{{product.name}}</a> </h3>
+                                        </div>
+
+                                    </div>
+                                    <div class="AllrighttextContent">
+                                        <input type="submit" value="Add to Cart" style="font-size: 16px;" data-product="{{product.id}}" data-action="add" class="update-cart">
+                                        <h3 > <span>{{product.price}}<span> <span>₹</span> </h3>
+                                    </div>
+                                    {% if request.user.is_staff %}
+                                    <div class="ud">
+                                        <span class="update">
+                                            <a href="{% url 'updateproduct' product.id %}"><i class="fa fa-edit" style="font-size:35px;color:green "></i></a>
+                                        </span>
+                                
+                                        <span class="update">
+                                            <a href="{% url 'deleteproduct' product.id %}"><i class="fa fa-trash" style="font-size:35px;color:red "></i></a>
+                                        </span>
+                                    </div>
+                                    {% endif %}
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                    {% if request.user.is_staff %}
+                    <div class="Addcard Allcard margin">
+                        <a href="{% url 'createproduct' %}"><i class="fa fa-plus" style="font-size:10rem;"></i></a>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+            {% endblock %}
+
