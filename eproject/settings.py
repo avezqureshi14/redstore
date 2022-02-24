@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ni1rkjc*@lviu6qh8v_)3(ujrpmc(tyy&a_#2%w38sj+cji8x1'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['avez-redstore.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['avez-redstore.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -118,8 +118,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR/'static'
 STATICFILES_DIR = [os.path.join(BASE_DIR,'static')]
 
 #Managing Media
@@ -130,4 +130,3 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
